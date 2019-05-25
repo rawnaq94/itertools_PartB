@@ -130,11 +130,31 @@ int main()
 			testcase.CHECK_OUTPUT(it, arr_11[arr]);
 			arr++;				
 		}
-	
-		
-		
-		
-		
+	        arr=0;
+		string arr_22[]={"1,1","2,2","3,3","4,4","5,5"};
+		for(auto i: zip(range(1,6), range(1,6)))
+		{
+			testcase.CHECK_OUTPUT(i, arr_22[arr]);
+			arr++;				
+		}
+		arr=0;
+		string arr_33[]={"1,6","2,7","3,8","4,9","5,10"};
+		for(auto i: zip(range(1,6), range(6,11)))
+		{
+			testcase.CHECK_OUTPUT(i, arr_33[arr]);
+			arr++;				
+		}
+		arr=0;
+		string arr_44[]={"e,t","x,e","a,s","m,t","p,i","l,n","e,g"};
+		for(auto i: zip(string("example), string("testing")))
+		{
+			testcase.CHECK_OUTPUT(i, arr_44[arr]);
+			arr++;				
+		}
+		  //end zip test.
+				   
+	testcase.setname("product test");
+				      
 		
 		
 		
