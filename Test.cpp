@@ -146,7 +146,7 @@ int main()
 		}
 		arr=0;
 		string arr_44[]={"e,t","x,e","a,s","m,t","p,i","l,n","e,g"};
-		for(auto i: zip(string("example), string("testing")))
+		for(auto i: zip(string("example"), string("testing")))
 		{
 			testcase.CHECK_OUTPUT(i, arr_44[arr]);
 			arr++;				
@@ -154,23 +154,52 @@ int main()
 		  //end zip test.
 				   
 	testcase.setname("product test");
-				      
+		arr=0;
+		string arr_10[]={"1,h","1,e","1,l","1,l","1,o","2,h","2,e","2,l","2,l","2,o","3,h","3,e","3,l","3,l","3,o","4,h","4,e","4,l","4,l","4,o","5,h","5,e","5,l","5,l","5,o"};
+		for(auto it: product(range(1,6), string("hello")))
+		{
+			testcase.CHECK_OUTPUT(it, arr_10[arr]);
+			arr++;				
+		}		       
+		arr=0;
+		string arr_20[]={"1,1","1,2","2,1","2,2"};
+		for(auto it: product(range(1,3), range(1,3)))
+		{
+			testcase.CHECK_OUTPUT(it, arr_20[arr]);
+			arr++;				
+		}
+		arr=0;
+		string arr_30[]={"1,4","1,5","1,6","1,7","1,8","1,9","2,4","2,5","2,6","2,7","2,8","2,9","3,4","3,5","3,6","3,7","3,8","3,9"};
+		for(auto it: product(range(1,4), range(4,10)))
+		{
+			testcase.CHECK_OUTPUT(it, arr_30[arr]);
+			arr++;				
+		}
+		arr=0;
+		string arr_40[]={"e,t","e,e","e,s","e,t","e,i","e,n","e,g","x,t","x,e","x,s","x,t","x,i","x,n","x,g","a,t","a,e","a,s","a,t","a,i","a,n","a,g","m,t","m,e","m,s","m,t","m,i","m,n","m,g","p,t","p,e","p,s","p,t","p,i","p,n","p,g","l,t","l,e","l,s","l,t","l,i","l,n","l,g","e,t","e,e","e,s","e,t","e,i","e,n","e,g"};
+		for(auto it: product(string("example"), string(testing)))
+		{
+			testcase.CHECK_OUTPUT(it, arr_40[arr]);
+			arr++;				
+		}
+		//end product test.
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+       testcase.setname("powerset test");	
+		int _cd=0;
+		string arr_50[]={"{}","{a}","{b}","{a,b}","{c}","{a,c}","{b,c}","{a,b,c}"};
+		for(auto it: powerset(string("abc")))
+		{
+			testcase.CHECK_OUTPUT(it, arr_50[_cd]);
+			_cd++;				
+		}
+		int _cd=0;
+		string arr_60[]={"{}","{1}","{2}","{1,2}"};
+		for(auto it: powerset(range(1,3)))
+		{
+			testcase.CHECK_OUTPUT(it, arr_60[_cd]);
+			_cd++;				
+		}
+		//end powerset test.		
     grade = testcase.grade();	
 	}
 	else
